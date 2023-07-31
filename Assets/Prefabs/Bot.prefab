@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4275173114981958621}
   - component: {fileID: 4275173114981958622}
   - component: {fileID: 4275173114981958618}
+  - component: {fileID: 8929130173416276552}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -145,4 +146,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  vertical: 0
+  direction: 0
   changeTime: 3
+--- !u!95 &8929130173416276552
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4275173114981958623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ef187fb5a4241446853e8e0c4e74b0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
