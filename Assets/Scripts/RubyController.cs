@@ -6,6 +6,7 @@ public class RubyController : MonoBehaviour
 {
     public float speed = 3.0f;
     public GameObject projectilePrefab;
+    public ParticleSystem kaboom;
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
     public int health { get { return currentHealth; } }
@@ -79,6 +80,9 @@ public class RubyController : MonoBehaviour
             isInvincible = true;
             invincibleTimer = timeInvincible;
             animator.SetTrigger("Hit");
+
+            kaboom.Play();
+            //Instantiate(kaboomPrefab, rigidbody2d.position, Quaternion.identity);
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);

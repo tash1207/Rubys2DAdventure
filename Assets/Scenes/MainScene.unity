@@ -10324,6 +10324,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4605533528860621023, guid: b5d74b90b970a4845bdd42205de5eda1, type: 3}
+      propertyPath: stopAction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605533528860621023, guid: b5d74b90b970a4845bdd42205de5eda1, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670226317471590939, guid: b5d74b90b970a4845bdd42205de5eda1, type: 3}
+      propertyPath: kaboomPrefab
+      value: 
+      objectReference: {fileID: 125856165333393434, guid: 89899fe83ac00fa469ae32ceabc8070b, type: 3}
     - target: {fileID: 7670226317471590940, guid: b5d74b90b970a4845bdd42205de5eda1, type: 3}
       propertyPath: m_RootOrder
       value: 1
