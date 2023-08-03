@@ -22,6 +22,10 @@ public class RubyController : MonoBehaviour
     float horizontal;
     float vertical;
 
+    AudioSource audioSource;
+    public AudioClip projectileThrownClip;
+    public AudioClip hurtClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,8 @@ public class RubyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         currentHealth = maxHealth;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,7 +67,7 @@ public class RubyController : MonoBehaviour
             Launch();
         }
         
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
             if (hit.collider != null)
@@ -95,6 +101,7 @@ public class RubyController : MonoBehaviour
             animator.SetTrigger("Hit");
 
             kaboom.Play();
+            PlaySound(hurtClip);
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
@@ -108,5 +115,11 @@ public class RubyController : MonoBehaviour
         projectile.Launch(lookDirection, 300);
 
         animator.SetTrigger("Launch");
+        PlaySound(projectileThrownClip);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
