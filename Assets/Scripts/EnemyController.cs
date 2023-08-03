@@ -15,11 +15,15 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     float timer;
 
+    AudioSource audioSource;
+    public AudioClip fixedClip;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         timer = changeTime;
     }
 
@@ -81,5 +85,7 @@ public class EnemyController : MonoBehaviour
         rigidbody2d.simulated = false;
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
+        audioSource.Stop();
+        audioSource.PlayOneShot(fixedClip);
     }
 }
